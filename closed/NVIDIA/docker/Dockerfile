@@ -27,6 +27,8 @@
 ARG BASE_IMAGE=nvcr.io/nvidia/tensorrt:19.09-py3
 FROM ${BASE_IMAGE}
 
+USER root
+
 # Explicitly use bash instead of sh ('echo' behaves differently on some shells)
 SHELL ["/bin/bash", "-c"]
 
