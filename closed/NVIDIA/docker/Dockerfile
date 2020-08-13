@@ -35,7 +35,7 @@ SHELL ["/bin/bash", "-c"]
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 RUN echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/ /" > /etc/apt/sources.list.d/cuda.list \
- && sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub \
+ && apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub \
  && sudo apt-get update \
  && sudo apt-get install -y --no-install-recommends build-essential autoconf libtool git \
         curl wget pkg-config sudo ca-certificates vim-tiny automake libssl-dev \
