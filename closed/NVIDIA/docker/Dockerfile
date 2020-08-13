@@ -35,12 +35,12 @@ SHELL ["/bin/bash", "-c"]
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 RUN echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/ /" > /etc/apt/sources.list.d/cuda.list \
- && apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub \
- && apt-get update \
- && apt-get install -y --no-install-recommends build-essential autoconf libtool git \
+ && sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub \
+ && sudo apt-get update \
+ && sudo apt-get install -y --no-install-recommends build-essential autoconf libtool git \
         curl wget pkg-config sudo ca-certificates vim-tiny automake libssl-dev \
         bc python3-dev python3-pip python2.7-dev google-perftools gdb libglib2.0-dev clang python-pip sshfs libre2-dev \
- && apt-get install -y --no-install-recommends cuda-cudart-dev-10-1 cuda-curand-dev-10-1 cuda-nvrtc-dev-10-1 cuda-command-line-tools-10-1 libcublas-dev \
+ && sudo apt-get install -y --no-install-recommends cuda-cudart-dev-10-1 cuda-curand-dev-10-1 cuda-nvrtc-dev-10-1 cuda-command-line-tools-10-1 libcublas-dev \
  && ln -s cuda-10.1 /usr/local/cuda \
  && apt-get remove -y cmake \
  && apt-get remove -y libgflags-dev \
