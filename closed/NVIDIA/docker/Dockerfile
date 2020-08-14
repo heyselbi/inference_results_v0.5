@@ -27,8 +27,6 @@
 ARG BASE_IMAGE=nvcr.io/nvidia/tensorrt:19.09-py3
 FROM ${BASE_IMAGE}
 
-ENV BUILDAH_FORMAT docker
-
 # Explicitly use bash instead of sh ('echo' behaves differently on some shells)
 SHELL ["/bin/bash", "-c"]
 
